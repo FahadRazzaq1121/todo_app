@@ -1,0 +1,78 @@
+.delete-field-main-section {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(204, 204, 204, 0.8);
+  z-index: 2;
+}
+.delete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.delete-content-box {
+  height: 250px;
+  width: 500px;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.delete-confirmation-text {
+  display: flex;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 28px;
+}
+.delete-confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirm-Delete_button {
+  font-size: 22px;
+  padding: 10px 25px;
+  background-color: #713fff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+.confirm-cancel_button {
+  font-size: 22px;
+  padding: 10px 25px;
+  background-color: transparent;
+  color: #713fff;
+  border: 2px solid #713fff;
+  border-radius: 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* 
+**************************************************
+**************************************************
+    DeleteModel Field Responsoiveness
+**************************************************
+**************************************************
+*/
+@media (max-width: 680px) {
+  .delete-confirmation-text {
+    font-size: 22px;
+  }
+  .delete-content-box {
+    height: 220px;
+    width: 480px;
+  }
+  .confirm-Delete_button {
+    font-size: 18px;
+  }
+  .confirm-cancel_button {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,122 @@
+.edit-task-pop-up-main-section {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(204, 204, 204, 0.8);
+  z-index: 2;
+}
+.editTask-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.edit-content-box {
+  height: 400px;
+  width: 550px;
+  background: white;
+  margin: 0 20px;
+  padding: 20px 40px;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.edit-and-cross-icon {
+  width: 100%;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+}
+.edit-task-left-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+.cross-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+.edit-input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.edit-input-field > label {
+  font-size: 16px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: gray;
+}
+.edit-input-field > input {
+  font-size: 18px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #b8e9e9;
+}
+.edit-priorit-btns {
+  margin-bottom: 30px;
+}
+.edit-priorit-btns > p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+  padding-bottom: 5px;
+}
+.edit-priorit-btns > button {
+  font-size: 16px;
+  padding: 8px 30px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.edit-priorit-btns > .high {
+  border: 1px solid red;
+  background-color: transparent;
+  color: Red;
+  font-weight: 500;
+}
+.edit-priorit-btns > .medium {
+  border: 1px solid #ffd621;
+  background-color: transparent;
+  color: #ffd621;
+  font-weight: 500;
+}
+.edit-priorit-btns > .low {
+  border: 1px solid #0ac947;
+  background-color: transparent;
+  color: #0ac947;
+  font-weight: 500;
+}
+.edit-task-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.edit-task-btn > button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: purple;
+  color: white;
+}
+
+/* 
+**************************************************
+**************************************************
+    EditModel Field Responsoiveness
+**************************************************
+**************************************************
+*/
+@media (max-width: 680px) {
+  .edit-priorit-btns > button {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+}
