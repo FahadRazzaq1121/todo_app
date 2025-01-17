@@ -61,7 +61,7 @@ const Record = ({
   useEffect(() => {
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [value.SelectDate]);
+  }, [value.SelectDate, updateCountdown]);
 
   return (
     <div className="output-row" key={index}>

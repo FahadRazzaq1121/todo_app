@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     setLoading(true);
     dispatch(fetchingData());
-  }, []);
+  }, [dispatch]);
 
   setTimeout(() => {
     setLoading(false);

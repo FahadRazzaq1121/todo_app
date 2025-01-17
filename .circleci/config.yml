@@ -1,21 +1,27 @@
-# This config was automatically generated from your source code
-# Stacks detected: deps:node:.
 version: 2.1
 orbs:
   node: circleci/node@5
+parameters:
+  run_tests:
+    type: boolean
+    default: false  # Change to true when you want to run tests
+
 jobs:
   test-node:
-    # Install node dependencies and run tests
     executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      # - run:
-      #     name: Run tests
-      #     command: npm test --passWithNoTests
+      - run:
+          name: Run tests
+          command: |
+            if [ << parameters.run_tests >> == true ]; then
+              npm test --passWithNoTests
+            else
+              echo "Skipping tests"
+            fi
   build-node:
-    # Build node project
     executor: node/default
     steps:
       - checkout
@@ -26,7 +32,6 @@ jobs:
       - run:
           name: Create the ~/artifacts directory if it doesn't exist
           command: mkdir -p ~/artifacts
-      # Copy output to artifacts dir
       - run:
           name: Copy artifacts
           command: cp -R build dist public .output .next .docusaurus ~/artifacts 2>/dev/null || true
@@ -34,21 +39,17 @@ jobs:
           path: ~/artifacts
           destination: node-build
   deploy:
-    # This is an example deploy job, not actually used by the workflow
     docker:
       - image: cimg/base:stable
     steps:
-      # Replace this with steps to deploy to users
       - run:
           name: deploy
           command: '#e.g. ./deploy.sh'
 workflows:
   build-and-test:
     jobs:
-      - test-node
+      - test-node:
+          run_tests: true  # Set to true when you want to run tests
       - build-node:
           requires:
             - test-node
-    # - deploy:
-    #     requires:
-    #       - build-node
