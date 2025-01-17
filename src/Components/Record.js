@@ -19,7 +19,7 @@ const Record = ({
   const [countdownReady, setCountdownReady] = useState(false);
 
   // Function to update the countdown data
-  const updateCountdown = () => {
+  const updateCountdown = useCallback(() => {
     if (value.SelectDate) {
       const duration = moment.duration(moment(value.SelectDate).diff(moment()));
 
@@ -57,11 +57,12 @@ const Record = ({
       }
       setCountdownReady(true);
     }
-  };
+  }, [value.SelectDate]);
+
   useEffect(() => {
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [value.SelectDate, updateCountdown]);
+  }, [updateCountdown]);
 
   return (
     <div className="output-row" key={index}>
