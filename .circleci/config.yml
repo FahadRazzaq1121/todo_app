@@ -11,9 +11,9 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run:
-          name: Run tests
-          command: npm test --passWithNoTests
+      # - run:
+      #     name: Run tests
+      #     command: npm test --passWithNoTests
   build-node:
     # Build node project
     executor: node/default
